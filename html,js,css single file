@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Log — a daily window on the sky</title>
+<meta name="description" content="A daily window on the sky, powered by NASA's Astronomy Picture of the Day archive.">
+<link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%20%22Star%20Log%22%2C%20%22short_name%22%3A%20%22Star%20Log%22%2C%20%22description%22%3A%20%22A%20daily%20window%20on%20the%20sky%2C%20powered%20by%20NASA%27s%20Astronomy%20Picture%20of%20the%20Day%20archive.%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22scope%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%2305070f%22%2C%20%22theme_color%22%3A%20%22%230b1026%22%2C%20%22orientation%22%3A%20%22portrait-primary%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520viewBox%253D%25220%25200%2520512%2520512%2522%2520xmlns%253D%2522http%253A//www.w3.org/2000/svg%2522%253E%250A%2520%2520%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520fill%253D%2522%25230b1026%2522/%253E%250A%2520%2520%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522256%2522%2520r%253D%2522230%2522%2520fill%253D%2522%252305070f%2522%2520stroke%253D%2522%25233e7c8c%2522%2520stroke-width%253D%25222%2522%2520opacity%253D%25220.6%2522/%253E%250A%2520%2520%253Cg%2520fill%253D%2522%2523cfc9b8%2522%2520opacity%253D%25220.8%2522%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522120%2522%2520cy%253D%2522130%2522%2520r%253D%25222.4%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522380%2522%2520cy%253D%2522110%2522%2520r%253D%25222%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522410%2522%2520cy%253D%2522300%2522%2520r%253D%25222.4%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522100%2522%2520cy%253D%2522360%2522%2520r%253D%25222%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522150%2522%2520cy%253D%2522420%2522%2520r%253D%25222.4%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522420%2522%2520cy%253D%2522420%2522%2520r%253D%25222%2522/%253E%250A%2520%2520%253C/g%253E%250A%2520%2520%253Cpath%2520d%253D%2522M256%2520120%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L286%2520226%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L396%2520226%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L308%2520290%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L340%2520396%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L256%2520330%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L172%2520396%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L204%2520290%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L116%2520226%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L226%2520226%2520Z%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520fill%253D%2522%2523e8b24d%2522/%253E%250A%253C/svg%253E%250A%22%2C%20%22sizes%22%3A%20%22any%22%2C%20%22type%22%3A%20%22image/svg%2Bxml%22%2C%20%22purpose%22%3A%20%22any%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520viewBox%253D%25220%25200%2520512%2520512%2522%2520xmlns%253D%2522http%253A//www.w3.org/2000/svg%2522%253E%250A%2520%2520%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520fill%253D%2522%25230b1026%2522/%253E%250A%2520%2520%253Cg%2520fill%253D%2522%2523cfc9b8%2522%2520opacity%253D%25220.8%2522%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522140%2522%2520cy%253D%2522150%2522%2520r%253D%25222.2%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522370%2522%2520cy%253D%2522130%2522%2520r%253D%25221.8%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522390%2522%2520cy%253D%2522330%2522%2520r%253D%25222.2%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522130%2522%2520cy%253D%2522370%2522%2520r%253D%25221.8%2522/%253E%250A%2520%2520%253C/g%253E%250A%2520%2520%253Cpath%2520d%253D%2522M256%2520166%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L279%2520249%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L365%2520249%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L297%2520299%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L322%2520382%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L256%2520332%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L190%2520382%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L215%2520299%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L147%2520249%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L233%2520249%2520Z%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520fill%253D%2522%2523e8b24d%2522/%253E%250A%253C/svg%253E%250A%22%2C%20%22sizes%22%3A%20%22any%22%2C%20%22type%22%3A%20%22image/svg%2Bxml%22%2C%20%22purpose%22%3A%20%22maskable%22%7D%5D%7D">
+<meta name="theme-color" content="#0b1026">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22%230b1026%22/%3E%0A%20%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%22230%22%20fill%3D%22%2305070f%22%20stroke%3D%22%233e7c8c%22%20stroke-width%3D%222%22%20opacity%3D%220.6%22/%3E%0A%20%20%3Cg%20fill%3D%22%23cfc9b8%22%20opacity%3D%220.8%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22130%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22380%22%20cy%3D%22110%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22410%22%20cy%3D%22300%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22360%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%22420%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22420%22%20cy%3D%22420%22%20r%3D%222%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M256%20120%0A%20%20%20%20%20%20%20%20%20%20%20L286%20226%0A%20%20%20%20%20%20%20%20%20%20%20L396%20226%0A%20%20%20%20%20%20%20%20%20%20%20L308%20290%0A%20%20%20%20%20%20%20%20%20%20%20L340%20396%0A%20%20%20%20%20%20%20%20%20%20%20L256%20330%0A%20%20%20%20%20%20%20%20%20%20%20L172%20396%0A%20%20%20%20%20%20%20%20%20%20%20L204%20290%0A%20%20%20%20%20%20%20%20%20%20%20L116%20226%0A%20%20%20%20%20%20%20%20%20%20%20L226%20226%20Z%22%0A%20%20%20%20%20%20%20%20fill%3D%22%23e8b24d%22/%3E%0A%3C/svg%3E%0A" type="image/svg+xml">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22%230b1026%22/%3E%0A%20%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%22230%22%20fill%3D%22%2305070f%22%20stroke%3D%22%233e7c8c%22%20stroke-width%3D%222%22%20opacity%3D%220.6%22/%3E%0A%20%20%3Cg%20fill%3D%22%23cfc9b8%22%20opacity%3D%220.8%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22130%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22380%22%20cy%3D%22110%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22410%22%20cy%3D%22300%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22360%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%22420%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22420%22%20cy%3D%22420%22%20r%3D%222%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M256%20120%0A%20%20%20%20%20%20%20%20%20%20%20L286%20226%0A%20%20%20%20%20%20%20%20%20%20%20L396%20226%0A%20%20%20%20%20%20%20%20%20%20%20L308%20290%0A%20%20%20%20%20%20%20%20%20%20%20L340%20396%0A%20%20%20%20%20%20%20%20%20%20%20L256%20330%0A%20%20%20%20%20%20%20%20%20%20%20L172%20396%0A%20%20%20%20%20%20%20%20%20%20%20L204%20290%0A%20%20%20%20%20%20%20%20%20%20%20L116%20226%0A%20%20%20%20%20%20%20%20%20%20%20L226%20226%20Z%22%0A%20%20%20%20%20%20%20%20fill%3D%22%23e8b24d%22/%3E%0A%3C/svg%3E%0A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Star Log">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokens ---------- */
+:root {
+  --ink-deep: #05070f;
+  --indigo: #0b1026;
+  --parchment: #f0ede2;
+  --parchment-dim: #cfc9b8;
+  --gold: #e8b24d;
+  --teal: #3e7c8c;
+  --line: rgba(240, 237, 226, 0.18);
+
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Work Sans", -apple-system, sans-serif;
+  --mono: "JetBrains Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(ellipse at 20% -10%, #14193a 0%, var(--indigo) 45%, var(--ink-deep) 100%);
+  color: var(--parchment);
+  font-family: var(--sans);
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, var(--parchment-dim), transparent),
+    radial-gradient(1px 1px at 26% 64%, var(--parchment-dim), transparent),
+    radial-gradient(1.5px 1.5px at 41% 32%, var(--gold), transparent),
+    radial-gradient(1px 1px at 58% 78%, var(--parchment-dim), transparent),
+    radial-gradient(1.5px 1.5px at 73% 22%, var(--parchment-dim), transparent),
+    radial-gradient(1px 1px at 85% 55%, var(--gold), transparent),
+    radial-gradient(1.5px 1.5px at 92% 85%, var(--parchment-dim), transparent),
+    radial-gradient(1px 1px at 6% 88%, var(--parchment-dim), transparent),
+    radial-gradient(1.5px 1.5px at 65% 8%, var(--parchment-dim), transparent);
+  opacity: 0.7;
+}
+
+.log {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 3rem;
+}
+
+.log__header { margin-bottom: 2.5rem; }
+
+.log__eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  margin: 0 0 0.6rem;
+}
+
+.log__title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  margin: 0 0 0.9rem;
+  color: var(--parchment);
+  letter-spacing: 0.01em;
+}
+
+.log__intro {
+  max-width: 46ch;
+  color: var(--parchment-dim);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.entry {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(240, 237, 226, 0.03);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  transition: opacity 0.4s ease;
+}
+
+.entry__frame {
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink-deep);
+}
+
+.entry__image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.entry__placeholder {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--parchment-dim);
+  opacity: 0.4;
+}
+
+.entry__date { font-family: var(--mono); font-size: 0.8rem; color: var(--gold); margin: 0 0 0.5rem; }
+.entry__title { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; margin: 0 0 0.75rem; color: var(--parchment); }
+.entry__text { margin: 0; color: var(--parchment-dim); font-size: 0.95rem; max-width: 62ch; }
+
+.controls {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dial {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-deep);
+  background: var(--gold);
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 2.2rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.dial:hover { background: #f0c264; }
+.dial:active { transform: scale(0.97); }
+.dial:disabled { opacity: 0.6; cursor: progress; }
+.dial:focus-visible { outline: 2px solid var(--parchment); outline-offset: 3px; }
+
+.controls__hint { font-family: var(--mono); font-size: 0.75rem; color: var(--parchment-dim); opacity: 0.7; margin: 0; }
+
+.datepick { display: flex; align-items: center; gap: 0.6rem; }
+.datepick__label { font-family: var(--mono); font-size: 0.75rem; color: var(--parchment-dim); }
+.datepick__input {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--parchment);
+  background: rgba(240, 237, 226, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  color-scheme: dark;
+}
+.datepick__input:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+.save {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.save:hover:not(:disabled) { background: var(--gold); color: var(--ink-deep); }
+.save:disabled { opacity: 0.4; cursor: not-allowed; }
+.save.is-saved { background: var(--gold); color: var(--ink-deep); }
+
+.saved { margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.saved__title { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; margin: 0 0 1rem; color: var(--parchment); }
+.saved__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.saved__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.65rem 0.85rem;
+}
+.saved__item-link { background: none; border: none; color: var(--parchment); text-decoration: none; cursor: pointer; font-family: var(--sans); font-size: 0.9rem; padding: 0; }
+.saved__item-date { font-family: var(--mono); font-size: 0.7rem; color: var(--parchment-dim); }
+
+/* ---------- Help panel ---------- */
+.help-panel {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.75rem;
+}
+
+.help-panel__toggle {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.help-panel__toggle:hover { color: var(--parchment); border-color: var(--teal); }
+
+.help { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+.help__item { border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.help__question { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--parchment); }
+.help__answer { margin: 0; color: var(--parchment-dim); font-size: 0.92rem; max-width: 62ch; }
+.help__answer a { color: var(--teal); }
+
+/* ---------- Footer ---------- */
+.credit { position: relative; z-index: 1; text-align: center; font-size: 0.8rem; color: var(--parchment-dim); opacity: 0.6; padding: 0 1.5rem 2.5rem; }
+.credit a { color: var(--teal); }
+.credit__line { margin: 0 0 0.35rem; }
+.credit__line:last-child { margin-bottom: 0; }
+.credit__meta { margin-top: 0.75rem; display: flex; justify-content: center; gap: 0.5rem; opacity: 0.8; }
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .entry { transition: none; }
+  .dial { transition: none; }
+}
+
+.entry.is-loading { opacity: 0.5; }
+
+@media (max-width: 480px) {
+  .log { padding: 3rem 1.1rem 2rem; }
+  .entry { padding: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="sky"></div>
+
+<main class="log">
+  <header class="log__header">
+    <p class="log__eyebrow">observations, one per day</p>
+    <h1 class="log__title">Star Log</h1>
+    <p class="log__intro">Every entry below comes from NASA's own daily record of the sky. Turn the page to see today's — or wind back through any date you like.</p>
+  </header>
+
+  <section class="entry" id="entry" aria-live="polite">
+    <div class="entry__frame">
+      <img class="entry__image" id="entryImage" alt="" hidden>
+      <div class="entry__placeholder" id="entryPlaceholder"><span>—</span></div>
+    </div>
+    <div class="entry__body">
+      <p class="entry__date" id="entryDate">no entry yet</p>
+      <h2 class="entry__title" id="entryTitle">Turn the page to begin</h2>
+      <p class="entry__text" id="entryText">Press the dial below and Star Log will fetch a real observation from NASA's archive — a nebula, a planet, a passing comet, whatever the sky offered up that day.</p>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button class="dial" id="dialBtn" type="button"><span class="dial__label" id="dialLabel">Turn the page</span></button>
+    <div class="datepick">
+      <label class="datepick__label" for="datePicker">or choose a date</label>
+      <input class="datepick__input" type="date" id="datePicker">
+    </div>
+    <button class="save" id="saveBtn" type="button" disabled>&#9734; Save this entry</button>
+    <p class="controls__hint" id="hint">Fetches a random date from 1995 to today</p>
+  </div>
+
+  <section class="saved" id="savedSection" hidden>
+    <h2 class="saved__title">Saved entries</h2>
+    <ul class="saved__list" id="savedList"></ul>
+  </section>
+
+  <section class="help-panel">
+    <button class="help-panel__toggle" id="helpToggle" type="button" aria-expanded="false">Help Center &#9662;</button>
+    <div class="help" id="helpContent" hidden>
+      <div class="help__item">
+        <h2 class="help__question">The image or fact isn't loading</h2>
+        <p class="help__answer">Star Log runs on NASA's shared demo API key, which gets rate-limited when a lot of people are using it at once. Wait a moment and turn the page again — if it still won't load after a few tries, the archive itself may be briefly down.</p>
+      </div>
+      <div class="help__item">
+        <h2 class="help__question">Some entries show a placeholder instead of a photo</h2>
+        <p class="help__answer">Occasionally NASA's picture of the day is a video rather than a still image. When that happens, Star Log shows a thumbnail if one's available, or a simple placeholder if not.</p>
+      </div>
+      <div class="help__item">
+        <h2 class="help__question">Can I pick a specific date instead of a random one?</h2>
+        <p class="help__answer">Yes — use the date field under the "Turn the page" button to jump straight to any day since June 16, 1995, when APOD began.</p>
+      </div>
+      <div class="help__item">
+        <h2 class="help__question">How do saved entries work?</h2>
+        <p class="help__answer">Tap "Save this entry" on any page you like, and it's added to the Saved list above. Saved entries are stored in your browser only — they're not sent anywhere, and clicking a saved title jumps straight back to that day.</p>
+      </div>
+      <div class="help__item">
+        <h2 class="help__question">Still stuck, or found a bug?</h2>
+        <p class="help__answer">Reach out to <a href="mailto:gweth189@gmail.com">gweth189@gmail.com</a>, or drop a message in the Hack Club Slack if this project was built as part of Stardance.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="credit">
+  <p class="credit__line">Imagery and facts sourced from NASA's <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a> archive, via their public API.</p>
+  <p class="credit__line">Made by phantom x&lt;hye/jun&gt;llc</p>
+  <p class="credit__line credit__meta"><span>&copy; <span id="year"></span></span></p>
+</footer>
+
+<script>
+// Star Log — fetches a random day's entry from NASA's Astronomy Picture of the Day (APOD) API
+
+// NASA's shared DEMO_KEY works for light use with no signup.
+// For a real project, grab your own free key at https://api.nasa.gov and swap it in —
+// the demo key is rate-limited and shared by everyone who hasn't gotten their own yet.
+const API_KEY = "DEMO_KEY";
+const APOD_START = new Date("1995-06-16"); // APOD's first ever entry
+
+const dialBtn = document.getElementById("dialBtn");
+const dialLabel = document.getElementById("dialLabel");
+const entry = document.getElementById("entry");
+const entryImage = document.getElementById("entryImage");
+const entryPlaceholder = document.getElementById("entryPlaceholder");
+const entryDate = document.getElementById("entryDate");
+const entryTitle = document.getElementById("entryTitle");
+const entryText = document.getElementById("entryText");
+const hint = document.getElementById("hint");
+const datePicker = document.getElementById("datePicker");
+const saveBtn = document.getElementById("saveBtn");
+const savedSection = document.getElementById("savedSection");
+const savedList = document.getElementById("savedList");
+const helpToggle = document.getElementById("helpToggle");
+const helpContent = document.getElementById("helpContent");
+
+const SAVE_KEY = "starlog_saved_entries";
+let currentEntry = null;
+
+const todayIso = new Date().toISOString().slice(0, 10);
+datePicker.max = todayIso;
+datePicker.min = "1995-06-16";
+
+function randomDateString() {
+  const today = new Date();
+  const span = today.getTime() - APOD_START.getTime();
+  const randomTime = APOD_START.getTime() + Math.random() * span;
+  const d = new Date(randomTime);
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+function formatDisplayDate(isoDate) {
+  const d = new Date(isoDate + "T00:00:00");
+  return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+}
+
+async function fetchEntry(fixedDate) {
+  dialBtn.disabled = true;
+  dialLabel.textContent = "Fetching...";
+  entry.classList.add("is-loading");
+  saveBtn.disabled = true;
+  saveBtn.classList.remove("is-saved");
+  saveBtn.innerHTML = "&#9734; Save this entry";
+
+  const date = fixedDate || randomDateString();
+
+  try {
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}&thumbs=true`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`NASA API responded with ${response.status}`);
+    const data = await response.json();
+    currentEntry = data;
+    renderEntry(data);
+    saveBtn.disabled = false;
+    updateSaveButtonState();
+  } catch (err) {
+    renderError(err);
+  } finally {
+    dialBtn.disabled = false;
+    dialLabel.textContent = "Turn the page";
+    entry.classList.remove("is-loading");
+  }
+}
+
+function renderEntry(data) {
+  entryDate.textContent = formatDisplayDate(data.date);
+  entryTitle.textContent = data.title;
+  entryText.textContent = data.explanation;
+
+  const imageUrl = data.media_type === "image" ? data.url : data.thumbnail_url;
+
+  if (imageUrl) {
+    entryImage.src = imageUrl;
+    entryImage.alt = data.title;
+    entryImage.hidden = false;
+    entryPlaceholder.hidden = true;
+  } else {
+    entryImage.hidden = true;
+    entryPlaceholder.hidden = false;
+    entryPlaceholder.querySelector("span").textContent = "🎥";
+  }
+
+  hint.textContent = "Fetches a random date from 1995 to today";
+}
+
+function renderError(err) {
+  entryDate.textContent = "something went wrong";
+  entryTitle.textContent = "The sky didn't answer";
+  entryText.textContent = "The NASA archive didn't respond this time — this can happen if the shared demo key is busy. Wait a moment and turn the page again.";
+  entryImage.hidden = true;
+  entryPlaceholder.hidden = false;
+  entryPlaceholder.querySelector("span").textContent = "—";
+  currentEntry = null;
+  saveBtn.disabled = true;
+  console.error("Star Log fetch failed:", err);
+}
+
+function getSavedEntries() {
+  try { return JSON.parse(localStorage.getItem(SAVE_KEY)) || []; }
+  catch { return []; }
+}
+
+function setSavedEntries(list) { localStorage.setItem(SAVE_KEY, JSON.stringify(list)); }
+function isSaved(date) { return getSavedEntries().some((e) => e.date === date); }
+
+function updateSaveButtonState() {
+  if (!currentEntry) return;
+  if (isSaved(currentEntry.date)) {
+    saveBtn.classList.add("is-saved");
+    saveBtn.innerHTML = "&#9733; Saved";
+  } else {
+    saveBtn.classList.remove("is-saved");
+    saveBtn.innerHTML = "&#9734; Save this entry";
+  }
+}
+
+function toggleSaveCurrent() {
+  if (!currentEntry) return;
+  const list = getSavedEntries();
+  const existingIndex = list.findIndex((e) => e.date === currentEntry.date);
+  if (existingIndex >= 0) {
+    list.splice(existingIndex, 1);
+  } else {
+    list.push({ date: currentEntry.date, title: currentEntry.title });
+    list.sort((a, b) => (a.date < b.date ? 1 : -1));
+  }
+  setSavedEntries(list);
+  updateSaveButtonState();
+  renderSavedList();
+}
+
+function renderSavedList() {
+  const list = getSavedEntries();
+  savedSection.hidden = list.length === 0;
+  savedList.innerHTML = "";
+  list.forEach((item) => {
+    const li = document.createElement("li");
+    li.className = "saved__item";
+    const link = document.createElement("button");
+    link.className = "saved__item-link";
+    link.type = "button";
+    link.textContent = item.title;
+    link.addEventListener("click", () => {
+      datePicker.value = item.date;
+      fetchEntry(item.date);
+    });
+    const dateLabel = document.createElement("span");
+    dateLabel.className = "saved__item-date";
+    dateLabel.textContent = item.date;
+    li.appendChild(link);
+    li.appendChild(dateLabel);
+    savedList.appendChild(li);
+  });
+}
+
+dialBtn.addEventListener("click", () => {
+  datePicker.value = "";
+  fetchEntry();
+});
+
+datePicker.addEventListener("change", () => {
+  if (datePicker.value) fetchEntry(datePicker.value);
+});
+
+saveBtn.addEventListener("click", toggleSaveCurrent);
+
+helpToggle.addEventListener("click", () => {
+  const isOpen = !helpContent.hidden;
+  helpContent.hidden = isOpen;
+  helpToggle.setAttribute("aria-expanded", String(!isOpen));
+  helpToggle.innerHTML = isOpen ? "Help Center &#9662;" : "Help Center &#9652;";
+});
+
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+renderSavedList();
+
+</script>
+</body>
+</html>
