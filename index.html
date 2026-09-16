@@ -1,521 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Star Log — a daily window on the sky</title>
-<meta name="description" content="A daily window on the sky, powered by NASA's Astronomy Picture of the Day archive.">
-<link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%20%22Star%20Log%22%2C%20%22short_name%22%3A%20%22Star%20Log%22%2C%20%22description%22%3A%20%22A%20daily%20window%20on%20the%20sky%2C%20powered%20by%20NASA%27s%20Astronomy%20Picture%20of%20the%20Day%20archive.%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22scope%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%2305070f%22%2C%20%22theme_color%22%3A%20%22%230b1026%22%2C%20%22orientation%22%3A%20%22portrait-primary%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520viewBox%253D%25220%25200%2520512%2520512%2522%2520xmlns%253D%2522http%253A//www.w3.org/2000/svg%2522%253E%250A%2520%2520%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520fill%253D%2522%25230b1026%2522/%253E%250A%2520%2520%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522256%2522%2520r%253D%2522230%2522%2520fill%253D%2522%252305070f%2522%2520stroke%253D%2522%25233e7c8c%2522%2520stroke-width%253D%25222%2522%2520opacity%253D%25220.6%2522/%253E%250A%2520%2520%253Cg%2520fill%253D%2522%2523cfc9b8%2522%2520opacity%253D%25220.8%2522%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522120%2522%2520cy%253D%2522130%2522%2520r%253D%25222.4%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522380%2522%2520cy%253D%2522110%2522%2520r%253D%25222%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522410%2522%2520cy%253D%2522300%2522%2520r%253D%25222.4%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522100%2522%2520cy%253D%2522360%2522%2520r%253D%25222%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522150%2522%2520cy%253D%2522420%2522%2520r%253D%25222.4%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522420%2522%2520cy%253D%2522420%2522%2520r%253D%25222%2522/%253E%250A%2520%2520%253C/g%253E%250A%2520%2520%253Cpath%2520d%253D%2522M256%2520120%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L286%2520226%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L396%2520226%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L308%2520290%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L340%2520396%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L256%2520330%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L172%2520396%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L204%2520290%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L116%2520226%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L226%2520226%2520Z%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520fill%253D%2522%2523e8b24d%2522/%253E%250A%253C/svg%253E%250A%22%2C%20%22sizes%22%3A%20%22any%22%2C%20%22type%22%3A%20%22image/svg%2Bxml%22%2C%20%22purpose%22%3A%20%22any%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520viewBox%253D%25220%25200%2520512%2520512%2522%2520xmlns%253D%2522http%253A//www.w3.org/2000/svg%2522%253E%250A%2520%2520%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520fill%253D%2522%25230b1026%2522/%253E%250A%2520%2520%253Cg%2520fill%253D%2522%2523cfc9b8%2522%2520opacity%253D%25220.8%2522%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522140%2522%2520cy%253D%2522150%2522%2520r%253D%25222.2%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522370%2522%2520cy%253D%2522130%2522%2520r%253D%25221.8%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522390%2522%2520cy%253D%2522330%2522%2520r%253D%25222.2%2522/%253E%250A%2520%2520%2520%2520%253Ccircle%2520cx%253D%2522130%2522%2520cy%253D%2522370%2522%2520r%253D%25221.8%2522/%253E%250A%2520%2520%253C/g%253E%250A%2520%2520%253Cpath%2520d%253D%2522M256%2520166%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L279%2520249%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L365%2520249%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L297%2520299%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L322%2520382%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L256%2520332%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L190%2520382%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L215%2520299%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L147%2520249%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520L233%2520249%2520Z%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520fill%253D%2522%2523e8b24d%2522/%253E%250A%253C/svg%253E%250A%22%2C%20%22sizes%22%3A%20%22any%22%2C%20%22type%22%3A%20%22image/svg%2Bxml%22%2C%20%22purpose%22%3A%20%22maskable%22%7D%5D%7D">
-<meta name="theme-color" content="#0b1026">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22%230b1026%22/%3E%0A%20%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%22230%22%20fill%3D%22%2305070f%22%20stroke%3D%22%233e7c8c%22%20stroke-width%3D%222%22%20opacity%3D%220.6%22/%3E%0A%20%20%3Cg%20fill%3D%22%23cfc9b8%22%20opacity%3D%220.8%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22130%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22380%22%20cy%3D%22110%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22410%22%20cy%3D%22300%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22360%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%22420%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22420%22%20cy%3D%22420%22%20r%3D%222%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M256%20120%0A%20%20%20%20%20%20%20%20%20%20%20L286%20226%0A%20%20%20%20%20%20%20%20%20%20%20L396%20226%0A%20%20%20%20%20%20%20%20%20%20%20L308%20290%0A%20%20%20%20%20%20%20%20%20%20%20L340%20396%0A%20%20%20%20%20%20%20%20%20%20%20L256%20330%0A%20%20%20%20%20%20%20%20%20%20%20L172%20396%0A%20%20%20%20%20%20%20%20%20%20%20L204%20290%0A%20%20%20%20%20%20%20%20%20%20%20L116%20226%0A%20%20%20%20%20%20%20%20%20%20%20L226%20226%20Z%22%0A%20%20%20%20%20%20%20%20fill%3D%22%23e8b24d%22/%3E%0A%3C/svg%3E%0A" type="image/svg+xml">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22%230b1026%22/%3E%0A%20%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%22230%22%20fill%3D%22%2305070f%22%20stroke%3D%22%233e7c8c%22%20stroke-width%3D%222%22%20opacity%3D%220.6%22/%3E%0A%20%20%3Cg%20fill%3D%22%23cfc9b8%22%20opacity%3D%220.8%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22130%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22380%22%20cy%3D%22110%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22410%22%20cy%3D%22300%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22100%22%20cy%3D%22360%22%20r%3D%222%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%22420%22%20r%3D%222.4%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22420%22%20cy%3D%22420%22%20r%3D%222%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M256%20120%0A%20%20%20%20%20%20%20%20%20%20%20L286%20226%0A%20%20%20%20%20%20%20%20%20%20%20L396%20226%0A%20%20%20%20%20%20%20%20%20%20%20L308%20290%0A%20%20%20%20%20%20%20%20%20%20%20L340%20396%0A%20%20%20%20%20%20%20%20%20%20%20L256%20330%0A%20%20%20%20%20%20%20%20%20%20%20L172%20396%0A%20%20%20%20%20%20%20%20%20%20%20L204%20290%0A%20%20%20%20%20%20%20%20%20%20%20L116%20226%0A%20%20%20%20%20%20%20%20%20%20%20L226%20226%20Z%22%0A%20%20%20%20%20%20%20%20fill%3D%22%23e8b24d%22/%3E%0A%3C/svg%3E%0A">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Star Log">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ---------- Tokens ---------- */
-:root {
-  --ink-deep: #05070f;
-  --indigo: #0b1026;
-  --parchment: #f0ede2;
-  --parchment-dim: #cfc9b8;
-  --gold: #e8b24d;
-  --teal: #3e7c8c;
-  --line: rgba(240, 237, 226, 0.18);
-
-  --serif: "Playfair Display", Georgia, serif;
-  --sans: "Work Sans", -apple-system, sans-serif;
-  --mono: "JetBrains Mono", monospace;
-}
-
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-}
-
-body {
-  background: radial-gradient(ellipse at 20% -10%, #14193a 0%, var(--indigo) 45%, var(--ink-deep) 100%);
-  color: var(--parchment);
-  font-family: var(--sans);
-  line-height: 1.5;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.sky {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(1.5px 1.5px at 12% 18%, var(--parchment-dim), transparent),
-    radial-gradient(1px 1px at 26% 64%, var(--parchment-dim), transparent),
-    radial-gradient(1.5px 1.5px at 41% 32%, var(--gold), transparent),
-    radial-gradient(1px 1px at 58% 78%, var(--parchment-dim), transparent),
-    radial-gradient(1.5px 1.5px at 73% 22%, var(--parchment-dim), transparent),
-    radial-gradient(1px 1px at 85% 55%, var(--gold), transparent),
-    radial-gradient(1.5px 1.5px at 92% 85%, var(--parchment-dim), transparent),
-    radial-gradient(1px 1px at 6% 88%, var(--parchment-dim), transparent),
-    radial-gradient(1.5px 1.5px at 65% 8%, var(--parchment-dim), transparent);
-  opacity: 0.7;
-}
-
-.log {
-  position: relative;
-  z-index: 1;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 4.5rem 1.5rem 3rem;
-}
-
-.log__header { margin-bottom: 2.5rem; }
-
-.log__eyebrow {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  color: var(--teal);
-  margin: 0 0 0.6rem;
-}
-
-.log__title {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(2.4rem, 6vw, 3.4rem);
-  margin: 0 0 0.9rem;
-  color: var(--parchment);
-  letter-spacing: 0.01em;
-}
-
-.log__intro {
-  max-width: 46ch;
-  color: var(--parchment-dim);
-  font-size: 1rem;
-  margin: 0;
-}
-
-.entry {
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  background: rgba(240, 237, 226, 0.03);
-  padding: 1.5rem;
-  display: grid;
-  gap: 1.5rem;
-  transition: opacity 0.4s ease;
-}
-
-.entry__frame {
-  aspect-ratio: 16 / 10;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ink-deep);
-}
-
-.entry__image { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.entry__placeholder {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 2rem;
-  color: var(--parchment-dim);
-  opacity: 0.4;
-}
-
-.entry__date { font-family: var(--mono); font-size: 0.8rem; color: var(--gold); margin: 0 0 0.5rem; }
-.entry__title { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; margin: 0 0 0.75rem; color: var(--parchment); }
-.entry__text { margin: 0; color: var(--parchment-dim); font-size: 0.95rem; max-width: 62ch; }
-
-.controls {
-  margin-top: 2.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.dial {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink-deep);
-  background: var(--gold);
-  border: none;
-  border-radius: 999px;
-  padding: 0.85rem 2.2rem;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.dial:hover { background: #f0c264; }
-.dial:active { transform: scale(0.97); }
-.dial:disabled { opacity: 0.6; cursor: progress; }
-.dial:focus-visible { outline: 2px solid var(--parchment); outline-offset: 3px; }
-
-.controls__hint { font-family: var(--mono); font-size: 0.75rem; color: var(--parchment-dim); opacity: 0.7; margin: 0; }
-
-.datepick { display: flex; align-items: center; gap: 0.6rem; }
-.datepick__label { font-family: var(--mono); font-size: 0.75rem; color: var(--parchment-dim); }
-.datepick__input {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  color: var(--parchment);
-  background: rgba(240, 237, 226, 0.05);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 0.4rem 0.6rem;
-  color-scheme: dark;
-}
-.datepick__input:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-
-.save {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid var(--gold);
-  border-radius: 999px;
-  padding: 0.5rem 1.4rem;
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.save:hover:not(:disabled) { background: var(--gold); color: var(--ink-deep); }
-.save:disabled { opacity: 0.4; cursor: not-allowed; }
-.save.is-saved { background: var(--gold); color: var(--ink-deep); }
-
-.saved { margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
-.saved__title { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; margin: 0 0 1rem; color: var(--parchment); }
-.saved__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
-.saved__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  padding: 0.65rem 0.85rem;
-}
-.saved__item-link { background: none; border: none; color: var(--parchment); text-decoration: none; cursor: pointer; font-family: var(--sans); font-size: 0.9rem; padding: 0; }
-.saved__item-date { font-family: var(--mono); font-size: 0.7rem; color: var(--parchment-dim); }
-
-/* ---------- Help panel ---------- */
-.help-panel {
-  margin-top: 2.5rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1.75rem;
-}
-
-.help-panel__toggle {
-  background: none;
-  border: 1px solid var(--line);
-  color: var(--teal);
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  border-radius: 999px;
-  padding: 0.5rem 1.1rem;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-}
-
-.help-panel__toggle:hover { color: var(--parchment); border-color: var(--teal); }
-
-.help { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
-.help__item { border-top: 1px solid var(--line); padding-top: 1.25rem; }
-.help__question { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--parchment); }
-.help__answer { margin: 0; color: var(--parchment-dim); font-size: 0.92rem; max-width: 62ch; }
-.help__answer a { color: var(--teal); }
-
-/* ---------- Footer ---------- */
-.credit { position: relative; z-index: 1; text-align: center; font-size: 0.8rem; color: var(--parchment-dim); opacity: 0.6; padding: 0 1.5rem 2.5rem; }
-.credit a { color: var(--teal); }
-.credit__line { margin: 0 0 0.35rem; }
-.credit__line:last-child { margin-bottom: 0; }
-.credit__meta { margin-top: 0.75rem; display: flex; justify-content: center; gap: 0.5rem; opacity: 0.8; }
-
-/* ---------- Motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .entry { transition: none; }
-  .dial { transition: none; }
-}
-
-.entry.is-loading { opacity: 0.5; }
-
-@media (max-width: 480px) {
-  .log { padding: 3rem 1.1rem 2rem; }
-  .entry { padding: 1rem; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1026">
+  <meta name="description" content="Star Log — a daily window on the sky, powered by a locally stored NASA astronomy catalog.">
+  <title>Star Log — A Daily Window on the Sky</title>
+  <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Star Log%22%2C%22short_name%22%3A%22Star Log%22%2C%22start_url%22%3A%22./%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22#080b1d%22%2C%22theme_color%22%3A%22#0b1026%22%2C%22description%22%3A%22A daily window on the sky.%22%2C%22icons%22%3A[]%7D">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✦%3C/text%3E%3C/svg%3E">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap');
+    :root{--ink:#080b1d;--panel:#111936;--panel2:#182348;--gold:#f5c76b;--cream:#fff5d6;--teal:#70e0d0;--muted:#a9b4d2;--line:#2b3865}
+    *{box-sizing:border-box} body{margin:0;color:var(--cream);background:radial-gradient(circle at 15% 10%,#27366e 0,transparent 32%),radial-gradient(circle at 90% 20%,#3a245f 0,transparent 28%),var(--ink);font-family:"Work Sans",sans-serif;min-height:100vh}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:43px 43px}
+    header,main,footer{width:min(1100px,92%);margin:auto} header{padding:28px 0 12px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .brand{display:flex;align-items:center;gap:12px}.logo{font-size:35px;color:var(--gold)} h1,h2{font-family:"Playfair Display",serif;margin:0} h1{font-size:clamp(28px,5vw,48px)} h2{font-size:clamp(25px,4vw,40px);line-height:1.1}
+    .eyebrow,.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:1.5px;font-size:11px;color:var(--teal)} .eyebrow{margin:0 0 8px}
+    button,select{font:inherit} button{cursor:pointer;border:1px solid var(--gold);border-radius:999px;padding:12px 18px;background:var(--gold);color:#171125;font-weight:700} button.secondary{background:transparent;color:var(--cream);border-color:var(--line)} button:focus-visible,select:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+    main{padding:45px 0}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.hero p{color:var(--muted);font-size:17px;line-height:1.7;max-width:600px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .orb{min-height:300px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#26356d,#171c42 55%,#3a2058);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 20px 70px #0005}.orb:before{content:"";width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff5bf,#e3a94d 22%,#8a4f91 55%,#1b1748 72%);box-shadow:0 0 80px #f5c76b66}.orb span{position:absolute;font-size:35px;color:var(--cream)}.orb span:nth-child(1){top:30px;left:35px}.orb span:nth-child(2){right:40px;bottom:35px}.orb span:nth-child(3){top:70px;right:90px;color:var(--teal)}
+    .section{margin-top:65px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:18px}.section-head p{color:var(--muted);margin:5px 0 0}.controls{display:flex;gap:10px;flex-wrap:wrap}.controls select{background:var(--panel);color:var(--cream);border:1px solid var(--line);border-radius:12px;padding:12px;max-width:100%}
+    .entry{display:grid;grid-template-columns:1fr 1fr;gap:25px;background:linear-gradient(145deg,#111936e8,#0e142ee8);border:1px solid var(--line);border-radius:25px;padding:20px;overflow:hidden}.visual{min-height:300px;border-radius:18px;overflow:hidden;background:var(--panel2);display:grid;place-items:center}.visual img{width:100%;height:100%;min-height:300px;object-fit:cover}.placeholder{padding:30px;text-align:center;color:var(--muted)}.placeholder strong{display:block;font-family:"Playfair Display",serif;color:var(--gold);font-size:70px}
+    .entry-copy{padding:15px 5px}.entry-copy h3{font:700 clamp(25px,4vw,38px)/1.15 "Playfair Display",serif;margin:10px 0 15px}.entry-copy p{color:var(--muted);line-height:1.8}.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--teal);font:11px "JetBrains Mono",monospace;text-transform:uppercase}.saved{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.saved-card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:18px}.saved-card h3{margin:8px 0;font-family:"Playfair Display",serif}.saved-card p{color:var(--muted);font-size:14px;line-height:1.5}.empty{color:var(--muted);border:1px dashed var(--line);border-radius:15px;padding:20px}
+    footer{padding:30px 0 45px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)} footer a{color:var(--teal)}
+    @media(max-width:760px){.hero,.entry{grid-template-columns:1fr}.orb{min-height:230px}.entry-copy{padding:5px}.hero{gap:25px}header{align-items:flex-start;flex-direction:column}}
+  </style>
 </head>
 <body>
-
-<div class="sky"></div>
-
-<main class="log">
-  <header class="log__header">
-    <p class="log__eyebrow">observations, one per day</p>
-    <h1 class="log__title">Star Log</h1>
-    <p class="log__intro">Every entry below comes from NASA's own daily record of the sky. Turn the page to see today's — or wind back through any date you like.</p>
+  <header>
+    <div class="brand"><div class="logo">✦</div><div><p class="eyebrow">Personal astronomy journal</p><h1>Star Log</h1></div></div>
+    <button class="secondary" id="helpBtn">How it works</button>
   </header>
 
-  <section class="entry" id="entry" aria-live="polite">
-    <div class="entry__frame">
-      <img class="entry__image" id="entryImage" alt="" hidden>
-      <div class="entry__placeholder" id="entryPlaceholder"><span>—</span></div>
-    </div>
-    <div class="entry__body">
-      <p class="entry__date" id="entryDate">no entry yet</p>
-      <h2 class="entry__title" id="entryTitle">Turn the page to begin</h2>
-      <p class="entry__text" id="entryText">Press the dial below and Star Log will fetch a real observation from NASA's archive — a nebula, a planet, a passing comet, whatever the sky offered up that day.</p>
-    </div>
-  </section>
-
-  <div class="controls">
-    <button class="dial" id="dialBtn" type="button"><span class="dial__label" id="dialLabel">Turn the page</span></button>
-    <div class="datepick">
-      <label class="datepick__label" for="datePicker">or choose a date</label>
-      <input class="datepick__input" type="date" id="datePicker">
-    </div>
-    <button class="save" id="saveBtn" type="button" disabled>&#9734; Save this entry</button>
-    <p class="controls__hint" id="hint">Fetches a random date from 1995 to today</p>
-  </div>
-
-  <section class="saved" id="savedSection" hidden>
-    <h2 class="saved__title">Saved entries</h2>
-    <ul class="saved__list" id="savedList"></ul>
-  </section>
-
-  <section class="help-panel">
-    <button class="help-panel__toggle" id="helpToggle" type="button" aria-expanded="false">Help Center &#9662;</button>
-    <div class="help" id="helpContent" hidden>
-      <div class="help__item">
-        <h2 class="help__question">The image or fact isn't loading</h2>
-        <p class="help__answer">Star Log runs on NASA's shared demo API key, which gets rate-limited when a lot of people are using it at once. Wait a moment and turn the page again — if it still won't load after a few tries, the archive itself may be briefly down.</p>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">A daily window on the sky</p>
+        <h2>Look up.<br>Learn something cosmic.</h2>
+        <p>Explore astronomy entries collected from NASA pages and stored locally in this project. No live NASA API request is needed when you use the app.</p>
+        <div class="actions"><button id="turnBtn">Turn the page ↗</button><button class="secondary" id="saveBtn">☆ Save entry</button></div>
+        <p class="mono" id="status" aria-live="polite">Loading local catalog…</p>
       </div>
-      <div class="help__item">
-        <h2 class="help__question">Some entries show a placeholder instead of a photo</h2>
-        <p class="help__answer">Occasionally NASA's picture of the day is a video rather than a still image. When that happens, Star Log shows a thumbnail if one's available, or a simple placeholder if not.</p>
+      <div class="orb" aria-hidden="true"><span>✧</span><span>✦</span><span>·</span></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div><p class="eyebrow">Today's observation</p><h2 id="entryHeading">The sky is waiting.</h2><p id="entrySub">Choose an entry or turn the page.</p></div>
+        <div class="controls"><select id="entrySelect" aria-label="Choose an astronomy entry"><option>Loading…</option></select></div>
       </div>
-      <div class="help__item">
-        <h2 class="help__question">Can I pick a specific date instead of a random one?</h2>
-        <p class="help__answer">Yes — use the date field under the "Turn the page" button to jump straight to any day since June 16, 1995, when APOD began.</p>
-      </div>
-      <div class="help__item">
-        <h2 class="help__question">How do saved entries work?</h2>
-        <p class="help__answer">Tap "Save this entry" on any page you like, and it's added to the Saved list above. Saved entries are stored in your browser only — they're not sent anywhere, and clicking a saved title jumps straight back to that day.</p>
-      </div>
-      <div class="help__item">
-        <h2 class="help__question">Still stuck, or found a bug?</h2>
-        <p class="help__answer">Reach out to <a href="mailto:gweth189@gmail.com">gweth189@gmail.com</a>.</p>
-      </div>
-    </div>
-  </section>
-</main>
+      <article class="entry">
+        <div class="visual" id="visual"><div class="placeholder"><strong>✦</strong>NASA image will appear here when available.</div></div>
+        <div class="entry-copy"><div class="meta"><span id="entryDate">STAR LOG</span><span id="entrySource">LOCAL CATALOG</span></div><h3 id="title">Preparing the universe…</h3><p id="description">Your local astronomy catalog is being opened.</p><p class="mono" id="credit"></p></div>
+      </article>
+    </section>
 
-<footer class="credit">
-  <p class="credit__line">Imagery and facts sourced from NASA's <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">Astronomy Picture of the Day</a> archive, via their public API.</p>
-  <p class="credit__line">Made by phantom x&lt;hye/jun&gt;llc</p>
-  <p class="credit__line credit__meta"><span>&copy; <span id="year"></span></span></p>
-</footer>
+    <section class="section">
+      <div class="section-head"><div><p class="eyebrow">Your collection</p><h2>Saved entries</h2><p>Keep the discoveries you want to revisit.</p></div><button class="secondary" id="clearBtn">Clear saved</button></div>
+      <div class="saved" id="savedList"><div class="empty">No saved entries yet.</div></div>
+    </section>
+  </main>
 
-<script>
-// Star Log — fetches a random day's entry from NASA's Astronomy Picture of the Day (APOD) API
+  <footer>
+    <p>Star Log · Built for Stardance</p>
+    <p>Content and images are credited to their original NASA pages. This project stores a local catalog and does not make runtime NASA API calls.</p>
+    <p><a href="https://www.nasa.gov/" target="_blank" rel="noreferrer">NASA</a> · <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noreferrer">Astronomy Picture of the Day</a></p>
+  </footer>
 
-// NASA's shared DEMO_KEY works for light use with no signup.
-// For a real project, grab your own free key at https://api.nasa.gov and swap it in —
-// the demo key is rate-limited and shared by everyone who hasn't gotten their own yet.
-const API_KEY = "DEMO_KEY";
-const APOD_START = new Date("1995-06-16"); // APOD's first ever entry
-
-const dialBtn = document.getElementById("dialBtn");
-const dialLabel = document.getElementById("dialLabel");
-const entry = document.getElementById("entry");
-const entryImage = document.getElementById("entryImage");
-const entryPlaceholder = document.getElementById("entryPlaceholder");
-const entryDate = document.getElementById("entryDate");
-const entryTitle = document.getElementById("entryTitle");
-const entryText = document.getElementById("entryText");
-const hint = document.getElementById("hint");
-const datePicker = document.getElementById("datePicker");
-const saveBtn = document.getElementById("saveBtn");
-const savedSection = document.getElementById("savedSection");
-const savedList = document.getElementById("savedList");
-const helpToggle = document.getElementById("helpToggle");
-const helpContent = document.getElementById("helpContent");
-
-const SAVE_KEY = "starlog_saved_entries";
-let currentEntry = null;
-
-const todayIso = new Date().toISOString().slice(0, 10);
-datePicker.max = todayIso;
-datePicker.min = "1995-06-16";
-
-function randomDateString() {
-  const today = new Date();
-  const span = today.getTime() - APOD_START.getTime();
-  const randomTime = APOD_START.getTime() + Math.random() * span;
-  const d = new Date(randomTime);
-  const yyyy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  return `${yyyy}-${mm}-${dd}`;
-}
-
-function formatDisplayDate(isoDate) {
-  const d = new Date(isoDate + "T00:00:00");
-  return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-}
-
-async function fetchEntry(fixedDate) {
-  dialBtn.disabled = true;
-  dialLabel.textContent = "Fetching...";
-  entry.classList.add("is-loading");
-  saveBtn.disabled = true;
-  saveBtn.classList.remove("is-saved");
-  saveBtn.innerHTML = "&#9734; Save this entry";
-
-  const date = fixedDate || randomDateString();
-
-  try {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}&thumbs=true`;
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`NASA API responded with ${response.status}`);
-    const data = await response.json();
-    currentEntry = data;
-    renderEntry(data);
-    saveBtn.disabled = false;
-    updateSaveButtonState();
-  } catch (err) {
-    renderError(err);
-  } finally {
-    dialBtn.disabled = false;
-    dialLabel.textContent = "Turn the page";
-    entry.classList.remove("is-loading");
-  }
-}
-
-function renderEntry(data) {
-  entryDate.textContent = formatDisplayDate(data.date);
-  entryTitle.textContent = data.title;
-  entryText.textContent = data.explanation;
-
-  const imageUrl = data.media_type === "image" ? data.url : data.thumbnail_url;
-
-  if (imageUrl) {
-    entryImage.src = imageUrl;
-    entryImage.alt = data.title;
-    entryImage.hidden = false;
-    entryPlaceholder.hidden = true;
-  } else {
-    entryImage.hidden = true;
-    entryPlaceholder.hidden = false;
-    entryPlaceholder.querySelector("span").textContent = "🎥";
-  }
-
-  hint.textContent = "Fetches a random date from 1995 to today";
-}
-
-function renderError(err) {
-  entryDate.textContent = "something went wrong";
-  entryTitle.textContent = "The sky didn't answer";
-  entryText.textContent = "The NASA archive didn't respond this time — this can happen if the shared demo key is busy. Wait a moment and turn the page again.";
-  entryImage.hidden = true;
-  entryPlaceholder.hidden = false;
-  entryPlaceholder.querySelector("span").textContent = "—";
-  currentEntry = null;
-  saveBtn.disabled = true;
-  console.error("Star Log fetch failed:", err);
-}
-
-function getSavedEntries() {
-  try { return JSON.parse(localStorage.getItem(SAVE_KEY)) || []; }
-  catch { return []; }
-}
-
-function setSavedEntries(list) { localStorage.setItem(SAVE_KEY, JSON.stringify(list)); }
-function isSaved(date) { return getSavedEntries().some((e) => e.date === date); }
-
-function updateSaveButtonState() {
-  if (!currentEntry) return;
-  if (isSaved(currentEntry.date)) {
-    saveBtn.classList.add("is-saved");
-    saveBtn.innerHTML = "&#9733; Saved";
-  } else {
-    saveBtn.classList.remove("is-saved");
-    saveBtn.innerHTML = "&#9734; Save this entry";
-  }
-}
-
-function toggleSaveCurrent() {
-  if (!currentEntry) return;
-  const list = getSavedEntries();
-  const existingIndex = list.findIndex((e) => e.date === currentEntry.date);
-  if (existingIndex >= 0) {
-    list.splice(existingIndex, 1);
-  } else {
-    list.push({ date: currentEntry.date, title: currentEntry.title });
-    list.sort((a, b) => (a.date < b.date ? 1 : -1));
-  }
-  setSavedEntries(list);
-  updateSaveButtonState();
-  renderSavedList();
-}
-
-function renderSavedList() {
-  const list = getSavedEntries();
-  savedSection.hidden = list.length === 0;
-  savedList.innerHTML = "";
-  list.forEach((item) => {
-    const li = document.createElement("li");
-    li.className = "saved__item";
-    const link = document.createElement("button");
-    link.className = "saved__item-link";
-    link.type = "button";
-    link.textContent = item.title;
-    link.addEventListener("click", () => {
-      datePicker.value = item.date;
-      fetchEntry(item.date);
-    });
-    const dateLabel = document.createElement("span");
-    dateLabel.className = "saved__item-date";
-    dateLabel.textContent = item.date;
-    li.appendChild(link);
-    li.appendChild(dateLabel);
-    savedList.appendChild(li);
+  <script>
+    const fallbackCatalog = [
+      {id:"nebula",title:"A Nebula Is a Stellar Nursery",description:"Nebulae are enormous clouds of gas and dust. Some are places where new stars form, while others are the remains of dying stars.",date:"Local entry",image:"",source:"NASA",url:"https://science.nasa.gov/universe/nebulae/"},
+      {id:"black-hole",title:"Black Holes Bend Space and Time",description:"A black hole is a region where gravity is so strong that, beyond its event horizon, nothing—not even light—can escape.",date:"Local entry",image:"",source:"NASA",url:"https://science.nasa.gov/universe/black-holes/"},
+      {id:"exoplanet",title:"Worlds Beyond Our Solar System",description:"Exoplanets are planets orbiting stars beyond the Sun. Scientists discover them using methods such as transits and stellar wobbles.",date:"Local entry",image:"",source:"NASA",url:"https://science.nasa.gov/exoplanets/"}
+    ];
+    let catalog = [], current = null;
+    const $ = id => document.getElementById(id);
+    async function loadCatalog(){
+      try{
+        const response = await fetch("catalog.json", {cache:"no-store"});
+        if(!response.ok) throw new Error("catalog unavailable");
+        catalog = await response.json();
+      }catch(error){ catalog = fallbackCatalog; }
+      if(!Array.isArray(catalog) || !catalog.length) catalog = fallbackCatalog;
+      catalog = catalog.filter(item => item && item.title);
+      $("entrySelect").innerHTML = catalog.map(item => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.title)}</option>`).join("");
+      $("status").textContent = `${catalog.length} local astronomy entries ready`;
+      showEntry(catalog[0]);
+    }
+    function escapeHtml(value){return String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+    function showEntry(item){
+      current=item;if(!item)return;
+      $("entrySelect").value=item.id;
+      $("entryHeading").textContent=item.title;
+      $("entrySub").textContent="A small note from the universe.";
+      $("title").textContent=item.title;
+      $("description").textContent=item.description || "No description was supplied.";
+      $("entryDate").textContent=item.date || "STAR LOG";
+      $("entrySource").textContent=item.source || "NASA";
+      $("credit").textContent=item.url ? "Source: NASA page" : "Local astronomy note";
+      $("visual").innerHTML=item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy">` : `<div class="placeholder"><strong>✦</strong>No image stored for this entry.<br>Open the source link in the footer or catalog.</div>`;
+      $("saveBtn").textContent = savedIds().includes(item.id) ? "★ Saved" : "☆ Save entry";
+    }
+    function savedIds(){return JSON.parse(localStorage.getItem("starlog-saved") || "[]");}
+    function saveCurrent(){if(!current)return;let ids=savedIds();ids=ids.includes(current.id)?ids.filter(id=>id!==current.id):[...ids,current.id];localStorage.setItem("starlog-saved",JSON.stringify(ids));renderSaved();showEntry(current);}
+    function renderSaved(){const ids=savedIds();const items=catalog.filter(item=>ids.includes(item.id));$("savedList").innerHTML=items.length?items.map(item=>`<article class="saved-card"><div class="meta">SAVED ENTRY</div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml((item.description||"").slice(0,150))}</p><button class="secondary" data-open="${escapeHtml(item.id)}">Open</button></article>`).join(""):`<div class="empty">No saved entries yet.</div>`;}
+    $("turnBtn").addEventListener("click",()=>{if(!catalog.length)return;showEntry(catalog[Math.floor(Math.random()*catalog.length)]);});
+    $("saveBtn").addEventListener("click",saveCurrent);
+    $("entrySelect").addEventListener("change",e=>showEntry(catalog.find(item=>item.id===e.target.value)));
+    $("savedList").addEventListener("click",e=>{const id=e.target.dataset.open;if(id)showEntry(catalog.find(item=>item.id===id));});
+    $("clearBtn").addEventListener("click",()=>{localStorage.removeItem("starlog-saved");renderSaved();showEntry(current);});
+    $("helpBtn").addEventListener("click",()=>alert("Star Log reads catalog.json stored in your GitHub project. The GitHub Actions workflow can update that file from NASA pages. Your saved entries stay in this browser."));
+    if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}
+    loadCatalog().then(renderSaved);
+  
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
   });
 }
-
-dialBtn.addEventListener("click", () => {
-  datePicker.value = "";
-  fetchEntry();
-});
-
-datePicker.addEventListener("change", () => {
-  if (datePicker.value) fetchEntry(datePicker.value);
-});
-
-saveBtn.addEventListener("click", toggleSaveCurrent);
-
-helpToggle.addEventListener("click", () => {
-  const isOpen = !helpContent.hidden;
-  helpContent.hidden = isOpen;
-  helpToggle.setAttribute("aria-expanded", String(!isOpen));
-  helpToggle.innerHTML = isOpen ? "Help Center &#9662;" : "Help Center &#9652;";
-});
-
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-renderSavedList();
 
 </script>
 </body>
 </html>
+
