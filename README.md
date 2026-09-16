@@ -1,3 +1,3 @@
 # star-log
-# a pwa like site that fetches astronomical data from nasa sources for astronomical nerds
-its inspired  by stardance
+# a pwa site that fetches astronomical data about sky observations made by telescopes including the  famous  hubble telescope  from nasa sources for science  fanatics
+# inspired by stardance
