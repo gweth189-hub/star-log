@@ -1,19 +1,21 @@
 
+
 {
-  "id": "./",
+  "id": "/star-log/",
   "name": "Star Log — Deep Space Science Hub",
   "short_name": "Star Log",
-  "description": "Explore NASA astronomy pictures and telescope archives.",
-  "start_url": "./",
-  "scope": "./",
+  "description": "Explore astronomy, NASA images and the universe.",
+  "start_url": "/star-log/",
+  "scope": "/star-log/",
   "display": "standalone",
-  "background_color": "#040613",
-  "theme_color": "#040613",
+  "orientation": "portrait-primary",
+  "background_color": "#05070f",
+  "theme_color": "#0b1026",
   "icons": [
     {
-      "src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/2728.png",
-      "sizes": "72x72",
-      "type": "image/png",
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
     }
   ]
