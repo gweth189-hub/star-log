@@ -5,102 +5,223 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#040613">
-  <meta name="description" content="Explore astronomy images, telescope discoveries and the wonders of space with Star Log.">
+  <meta name="description" content="Explore NASA astronomy pictures, Hubble telescope observations and deep space discoveries.">
   <title>Star Log — Deep Space Science Hub</title>
   <link rel="manifest" href="./manifest.webmanifest">
+
   <style>
     :root {
-      --ink:#040613; --panel:#0d1430; --gold:#f5c76b;
-      --cream:#fff5d6; --teal:#70e0d0; --muted:#9aa8cd;
+      --ink:#040613;
+      --panel:#0d1430;
+      --gold:#f5c76b;
+      --cream:#fff5d6;
+      --teal:#70e0d0;
+      --muted:#9aa8cd;
       --line:#222f5c;
     }
+
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
+
     body {
-      margin:0; min-height:100vh; color:var(--cream);
-      background:
-        radial-gradient(circle at 10% 15%,#1d295d 0,transparent 40%),
-        radial-gradient(circle at 85% 80%,#2b174d 0,transparent 35%),
-        var(--ink);
+      margin:0;
+      min-height:100vh;
+      color:var(--cream);
       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 10% 15%,#1d295d,transparent 40%),
+        radial-gradient(circle at 85% 80%,#2b174d,transparent 35%),
+        var(--ink);
     }
-    a { color:var(--teal); }
-    header, main, footer { width:min(1200px,92%); margin:auto; }
+
+    header, main, footer {
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
     header {
-      padding:25px 0; border-bottom:1px solid var(--line);
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:25px 0;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
     }
-    h1 { margin:0; color:var(--gold); font-size:clamp(1.7rem,4vw,2.3rem); }
-    .top-actions { display:flex; gap:10px; flex-wrap:wrap; }
-    button, input, select {
-      font:inherit; border-radius:10px; padding:11px 14px;
+
+    h1 { color:var(--gold); margin:0; font-size:2rem; }
+
+    button, input {
+      font:inherit;
+      padding:11px 14px;
+      border-radius:10px;
     }
+
     button {
-      cursor:pointer; border:1px solid var(--teal);
-      background:#102b3c; color:var(--teal); font-weight:700;
+      cursor:pointer;
+      color:var(--teal);
+      background:#102b3c;
+      border:1px solid var(--teal);
+      font-weight:700;
     }
-    button:hover { filter:brightness(1.2); }
-    .install { border-color:var(--gold); color:var(--gold); background:#302514; }
-    .hero { padding:54px 0 30px; }
-    .eyebrow { color:var(--teal); letter-spacing:2px; font-size:.78rem; font-weight:800; }
-    .hero h2 { font-size:clamp(2.1rem,6vw,4rem); line-height:1.05; margin:14px 0; }
+
+    button:disabled { opacity:.6; cursor:wait; }
+
+    .install {
+      color:var(--gold);
+      background:#302514;
+      border-color:var(--gold);
+    }
+
+    .hero { padding:55px 0 30px; }
+
+    .eyebrow {
+      color:var(--teal);
+      letter-spacing:2px;
+      font-size:.8rem;
+      font-weight:800;
+    }
+
+    .hero h2 {
+      font-size:clamp(2.2rem,6vw,4rem);
+      line-height:1.08;
+      margin:15px 0;
+    }
+
     .hero h2 span { color:var(--gold); }
-    .hero p { max-width:700px; color:var(--muted); line-height:1.8; }
+
+    .hero p, .section-head p {
+      max-width:720px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
     .section-head {
-      margin:35px 0 22px; padding-left:17px;
+      margin:38px 0 22px;
       border-left:4px solid var(--teal);
+      padding-left:17px;
     }
+
     .section-head h2 { margin:0; font-size:1.8rem; }
-    .section-head p { color:var(--muted); margin:7px 0 0; line-height:1.6; }
-    .toolbar { display:flex; gap:10px; flex-wrap:wrap; margin:22px 0; }
-    input, select {
-      background:var(--panel); color:var(--cream);
-      border:1px solid var(--line); min-width:0;
+
+    .toolbar {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:20px 0;
     }
-    input { flex:1; min-width:180px; }
+
+    input {
+      flex:1;
+      min-width:180px;
+      background:var(--panel);
+      color:var(--cream);
+      border:1px solid var(--line);
+    }
+
+    .status {
+      min-height:25px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
     .grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));
-      gap:22px; margin-bottom:50px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));
+      gap:22px;
+      margin:20px 0 50px;
     }
+
     .card {
-      overflow:hidden; background:rgba(13,20,48,.8);
-      border:1px solid var(--line); border-radius:20px;
-      box-shadow:0 12px 30px #0004; display:flex; flex-direction:column;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      background:rgba(13,20,48,.85);
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:0 12px 30px #0004;
     }
+
     .card img, .visual {
-      width:100%; height:210px; object-fit:cover;
+      width:100%;
+      height:210px;
+      object-fit:cover;
       background:linear-gradient(135deg,#182858,#45285f,#0b3544);
     }
-    .visual { display:grid; place-items:center; font-size:3.7rem; }
-    .content { padding:20px; display:flex; flex-direction:column; gap:11px; flex:1; }
+
+    .visual {
+      display:grid;
+      place-items:center;
+      font-size:3.5rem;
+    }
+
+    .content {
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      flex:1;
+    }
+
     .badge {
-      align-self:flex-start; color:var(--teal);
-      background:#70e0d014; border:1px solid #70e0d044;
-      border-radius:7px; padding:5px 9px;
-      font-size:.72rem; font-weight:800; text-transform:uppercase;
+      align-self:flex-start;
+      padding:5px 9px;
+      border-radius:7px;
+      color:var(--teal);
+      background:#70e0d014;
+      border:1px solid #70e0d044;
+      font-size:.72rem;
+      font-weight:800;
+      text-transform:uppercase;
     }
+
     .content h3 { margin:0; color:white; font-size:1.25rem; }
-    .content p { color:var(--muted); line-height:1.65; font-size:.94rem; margin:0; }
-    .meta { font-size:.78rem; color:var(--gold); }
-    .card a { margin-top:auto; padding-top:5px; font-weight:700; }
-    .status { color:var(--muted); min-height:28px; margin:0 0 20px; }
-    .about {
-      background:#0d1430b8; border:1px solid var(--line);
-      padding:23px; border-radius:18px; margin:25px 0 50px;
-      color:var(--muted); line-height:1.8;
+
+    .content p {
+      margin:0;
+      color:var(--muted);
+      font-size:.94rem;
+      line-height:1.7;
+      overflow-wrap:anywhere;
     }
-    footer { border-top:1px solid var(--line); padding:24px 0 35px; color:var(--muted); font-size:.85rem; }
-    .small { font-size:.8rem; }
+
+    .meta { color:var(--gold); font-size:.8rem; }
+
+    .content a {
+      margin-top:auto;
+      padding-top:6px;
+      color:var(--teal);
+      font-weight:700;
+    }
+
+    .about {
+      padding:23px;
+      margin:25px 0 50px;
+      color:var(--muted);
+      line-height:1.8;
+      background:#0d1430c9;
+      border:1px solid var(--line);
+      border-radius:18px;
+    }
+
+    footer {
+      padding:25px 0 35px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.85rem;
+      line-height:1.8;
+    }
+
     @media(max-width:600px) {
       header { align-items:flex-start; flex-direction:column; }
       .hero { padding-top:35px; }
     }
   </style>
 </head>
+
 <body>
 <header>
   <h1>✦ Star Log</h1>
-  <div class="top-actions">
+  <div class="toolbar">
     <button id="refreshBtn">↻ Refresh discoveries</button>
     <button class="install" id="installBtn" hidden>Install app</button>
   </div>
@@ -111,188 +232,241 @@
     <div class="eyebrow">DEEP SPACE SCIENCE HUB · NASA SOURCES</div>
     <h2>Your window into<br><span>the universe.</span></h2>
     <p>
-      Explore astronomy pictures, telescope observations and cosmic discoveries.
-      From Hubble's distant galaxies to today's featured astronomy image,
-      investigate the universe one discovery at a time.
+      Explore the cosmos through astronomy images, telescope archives,
+      and scientific explanations. Discover distant galaxies, nebulae,
+      planets and observations from NASA's space science collections.
     </p>
   </section>
 
   <section>
     <div class="section-head">
       <h2>Today's Cosmic Feed</h2>
-      <p>Recent astronomy pictures and explanations from NASA's Astronomy Picture of the Day archive.</p>
+      <p>NASA's Astronomy Picture of the Day, with explanations from astronomers and contributors.</p>
     </div>
     <div class="toolbar">
-      <input id="searchInput" type="search" placeholder="Search titles and descriptions..." aria-label="Search discoveries">
+      <input id="searchInput" type="search"
+        placeholder="Search discoveries..."
+        aria-label="Search astronomy discoveries">
     </div>
-    <p class="status" id="apodStatus" role="status">Loading NASA astronomy feed…</p>
+    <p class="status" id="apodStatus" role="status">Loading NASA astronomy feed...</p>
     <div class="grid" id="apodGrid"></div>
   </section>
 
   <section>
     <div class="section-head">
       <h2>Hubble & Telescope Archive</h2>
-      <p>Explore images and descriptions from NASA's public Image and Video Library.</p>
+      <p>Search NASA's public image collection for telescope and deep-space imagery.</p>
     </div>
-    <p class="status" id="hubbleStatus" role="status">Loading telescope archive…</p>
+    <p class="status" id="hubbleStatus" role="status">Loading telescope archive...</p>
     <div class="grid" id="hubbleGrid"></div>
   </section>
 
   <section>
     <div class="section-head">
       <h2>About Star Log</h2>
-      <p>A science exploration project for curious minds.</p>
+      <p>A science exploration project built for curious minds.</p>
     </div>
     <div class="about">
-      Star Log brings public astronomy resources into one readable, mobile-friendly
-      interface. Discoveries are fetched from NASA's public endpoints when online.
-      The app shell is cached for offline access, although new images and live data
-      require an internet connection.
+      Star Log brings public astronomy resources into one responsive interface.
+      When online, it fetches current astronomy pictures and telescope images
+      from NASA's public endpoints. The service worker helps cache the site
+      for offline reopening; new discoveries require an internet connection.
       <br><br>
-      <strong>Data note:</strong> NASA's Astronomy Picture of the Day may include
-      work from different observatories and photographers. A NASA-hosted image
-      is not automatically a Hubble observation; check each item's description
-      and source for details.
+      <strong>Science note:</strong> NASA APOD features different subjects and
+      contributors. Not every APOD image is from Hubble. Read each item's
+      explanation and source to learn which telescope or observatory was used.
     </div>
   </section>
 </main>
 
 <footer>
-  <strong>Star Log</strong> · Built for space and science fans.
-  <br>Data sources:
+  <strong>Star Log</strong> · Deep Space Science Hub
+  <br>
+  Sources:
   <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noreferrer">NASA APOD</a>
-  · <a href="https://images.nasa.gov/" target="_blank" rel="noreferrer">NASA Image and Video Library</a>
-  <p class="small">NASA content may be subject to individual credit or usage requirements. Check source details before reuse.</p>
+  ·
+  <a href="https://images.nasa.gov/" target="_blank" rel="noreferrer">NASA Image and Video Library</a>
+  <p>Check each source's credits and usage terms before reusing images.</p>
 </footer>
 
 <script>
+  const NASA_API_KEY = "HGzmGWT9mRqNw6rjTJKdzq6LWpmfPfJQJDP7djhj";
+
   const $ = id => document.getElementById(id);
   const apodGrid = $("apodGrid");
   const hubbleGrid = $("hubbleGrid");
+
   let apodItems = [];
   let hubbleItems = [];
   let installPrompt = null;
 
   function escapeHTML(value = "") {
     return String(value).replace(/[&<>"']/g, char => ({
-      "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
     })[char]);
   }
 
   function card(item, label) {
-    const title = escapeHTML(item.title || "Untitled discovery");
-    const explanation = escapeHTML(item.description || "Open the original NASA source for more information.");
-    const date = escapeHTML((item.date || "").slice(0, 10));
+    const title = escapeHTML(item.title || "Astronomy discovery");
+    const description = escapeHTML(item.description || "Open NASA's source to learn more.");
+    const date = escapeHTML((item.date || "").slice(0,10));
+
     const image = item.image || "";
-    const source = item.source || "https://www.nasa.gov/";
-    const safeImage = /^https:\/\/images-assets\.nasa\.gov\//i.test(image) ||
-                      /^https:\/\/apod\.nasa\.gov\//i.test(image) ||
-                      /^https:\/\/science\.nasa\.gov\//i.test(image);
-    const imageHTML = safeImage
+    const isNASAImage =
+      /^https:\/\/images-assets\.nasa\.gov\//i.test(image) ||
+      /^https:\/\/apod\.nasa\.gov\//i.test(image) ||
+      /^https:\/\/science\.nasa\.gov\//i.test(image);
+
+    const imageHTML = isNASAImage
       ? `<img src="${escapeHTML(image)}" alt="${title}" loading="lazy">`
-      : `<div class="visual" aria-label="Space illustration">✦</div>`;
-    return `<article class="card">
-      ${imageHTML}
-      <div class="content">
-        <span class="badge">${escapeHTML(label)}</span>
-        <h3>${title}</h3>
-        <div class="meta">${date || "NASA archive"}</div>
-        <p>${explanation.length > 450 ? explanation.slice(0,450) + "…" : explanation}</p>
-        <a href="${escapeHTML(source)}" target="_blank" rel="noreferrer">Explore source ↗</a>
-      </div>
-    </article>`;
+      : `<div class="visual" role="img" aria-label="Space artwork">✦</div>`;
+
+    return `
+      <article class="card">
+        ${imageHTML}
+        <div class="content">
+          <span class="badge">${escapeHTML(label)}</span>
+          <h3>${title}</h3>
+          <div class="meta">${date || "NASA archive"}</div>
+          <p>${description.length > 500 ? description.slice(0,500) + "…" : description}</p>
+          <a href="${escapeHTML(item.source || "https://www.nasa.gov/")}"
+             target="_blank" rel="noopener noreferrer">Explore source ↗</a>
+        </div>
+      </article>`;
   }
 
   function render(grid, items, label) {
     const term = $("searchInput").value.toLowerCase().trim();
+
     const filtered = items.filter(item =>
-      `${item.title || ""} ${item.description || ""}`.toLowerCase().includes(term)
+      `${item.title || ""} ${item.description || ""}`
+        .toLowerCase().includes(term)
     );
+
     grid.innerHTML = filtered.length
-      ? filtered.map(item => card(item, label)).join("")
-      : `<p class="status">No matching discoveries. Try another search.</p>`;
+      ? filtered.map(item => card(item,label)).join("")
+      : `<p class="status">No matching discoveries found.</p>`;
   }
 
   function renderAll() {
-    render(apodGrid, apodItems, "NASA APOD");
-    render(hubbleGrid, hubbleItems, "Telescope archive");
+    render(apodGrid,apodItems,"NASA APOD");
+    render(hubbleGrid,hubbleItems,"NASA image archive");
   }
 
   async function loadAPOD() {
-    $("apodStatus").textContent = "Loading NASA astronomy pictures…";
+    $("apodStatus").textContent = "Fetching astronomy pictures from NASA...";
+
     try {
-      const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=6");
-      if (!response.ok) throw new Error("NASA APOD request failed");
+      const url = new URL("https://api.nasa.gov/planetary/apod");
+      url.searchParams.set("api_key",NASA_API_KEY);
+      url.searchParams.set("count","8");
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error("NASA APOD returned HTTP " + response.status);
+      }
+
       const data = await response.json();
-      apodItems = data.filter(item => item.media_type === "image").map(item => ({
-        title: item.title,
-        description: item.explanation,
-        date: item.date,
-        image: item.url,
-        source: item.hdurl || item.url || "https://apod.nasa.gov/apod/astropix.html"
-      }));
+
+      apodItems = data
+        .filter(item => item.media_type === "image")
+        .map(item => ({
+          title:item.title,
+          description:item.explanation,
+          date:item.date,
+          image:item.url,
+          source:item.hdurl || item.url ||
+            "https://apod.nasa.gov/apod/astropix.html"
+        }));
+
       $("apodStatus").textContent = apodItems.length
-        ? "NASA astronomy feed updated."
-        : "No images returned this time. Try refreshing.";
+        ? "Astronomy feed updated from NASA."
+        : "NASA returned no images this time.";
     } catch (error) {
-      $("apodStatus").textContent = "NASA APOD is unavailable right now. Check your connection and try again.";
+      console.error(error);
+      $("apodStatus").textContent =
+        "Could not load NASA APOD. Check your connection or API key and refresh.";
     }
+
     renderAll();
   }
 
   async function loadHubble() {
-    $("hubbleStatus").textContent = "Searching NASA's public image archive…";
+    $("hubbleStatus").textContent = "Searching NASA's image archive...";
+
     try {
-      const url = "https://images-api.nasa.gov/search?q=Hubble%20Space%20Telescope&media_type=image&page_size=9";
+      const url = new URL("https://images-api.nasa.gov/search");
+      url.searchParams.set("q","Hubble Space Telescope");
+      url.searchParams.set("media_type","image");
+      url.searchParams.set("page_size","9");
+
       const response = await fetch(url);
-      if (!response.ok) throw new Error("NASA image search failed");
+
+      if (!response.ok) {
+        throw new Error("NASA image search returned HTTP " + response.status);
+      }
+
       const data = await response.json();
+
       hubbleItems = (data.collection.items || []).map(entry => {
         const info = (entry.data || [])[0] || {};
-        const link = (entry.links || []).find(item => item.rel === "preview");
+        const preview = (entry.links || []).find(link => link.rel === "preview");
+
         return {
-          title: info.title || "Telescope observation",
-          description: info.description || "View the NASA archive entry for further details.",
-          date: info.date_created || "",
-          image: link ? link.href : "",
-          source: info.nasa_id
-            ? `https://images.nasa.gov/details/${encodeURIComponent(info.nasa_id)}`
+          title:info.title || "Telescope observation",
+          description:info.description || "Open the NASA archive entry for details.",
+          date:info.date_created || "",
+          image:preview ? preview.href : "",
+          source:info.nasa_id
+            ? "https://images.nasa.gov/details/" + encodeURIComponent(info.nasa_id)
             : "https://images.nasa.gov/"
         };
       });
+
       $("hubbleStatus").textContent = hubbleItems.length
-        ? "NASA telescope archive loaded. Check each source for observation details."
-        : "No telescope images found. Try refreshing.";
+        ? "NASA image archive loaded. Verify telescope details on each source page."
+        : "No images found. Try refreshing.";
     } catch (error) {
-      $("hubbleStatus").textContent = "NASA's image archive is unavailable right now. Check your connection and try again.";
+      console.error(error);
+      $("hubbleStatus").textContent =
+        "NASA's image archive is unavailable. Check your connection and refresh.";
     }
+
     renderAll();
   }
 
   async function refreshData() {
     $("refreshBtn").disabled = true;
-    await Promise.all([loadAPOD(), loadHubble()]);
-    $("refreshBtn").disabled = false;
+
+    try {
+      await Promise.all([loadAPOD(),loadHubble()]);
+    } finally {
+      $("refreshBtn").disabled = false;
+    }
   }
 
-  $("refreshBtn").addEventListener("click", refreshData);
-  $("searchInput").addEventListener("input", renderAll);
+  $("refreshBtn").addEventListener("click",refreshData);
+  $("searchInput").addEventListener("input",renderAll);
 
   if ("serviceWorker" in navigator && location.protocol !== "file:") {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch(error =>
-        console.warn("Service worker registration failed:", error)
-      );
+    window.addEventListener("load",() => {
+      navigator.serviceWorker.register("./sw.js")
+        .catch(error => console.error("Service worker registration failed:",error));
     });
   }
 
-  window.addEventListener("beforeinstallprompt", event => {
+  window.addEventListener("beforeinstallprompt",event => {
     event.preventDefault();
     installPrompt = event;
     $("installBtn").hidden = false;
   });
 
-  $("installBtn").addEventListener("click", async () => {
+  $("installBtn").addEventListener("click",async () => {
     if (!installPrompt) return;
     installPrompt.prompt();
     await installPrompt.userChoice;
