@@ -2,6 +2,7 @@
 
 
 
+
 {
   "id": "/star-log/",
   "name": "Star Log — Deep Space Science Hub",
@@ -24,16 +25,16 @@
   "screenshots": [
     {
       "src": "/star-log/screenshots/desktop.png",
-      "sizes": "1280x800",
+      "sizes": "1355x601",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Star Log desktop"
+      "label": "Star Log desktop astronomy dashboard"
     },
     {
       "src": "/star-log/screenshots/mobile.png",
-      "sizes": "390x844",
+      "sizes": "260x481",
       "type": "image/png",
-      "label": "Star Log mobile"
+      "label": "Star Log mobile astronomy dashboard"
     }
   ]
 }
