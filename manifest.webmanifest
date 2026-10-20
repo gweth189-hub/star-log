@@ -1,14 +1,12 @@
 
 
 {
-  "id": "/star-log/",
   "name": "Star Log — Deep Space Science Hub",
   "short_name": "Star Log",
-  "description": "Explore astronomy, NASA images and the universe.",
+  "description": "Explore astronomy and NASA images.",
   "start_url": "/star-log/",
   "scope": "/star-log/",
   "display": "standalone",
-  "orientation": "portrait-primary",
   "background_color": "#05070f",
   "theme_color": "#0b1026",
   "icons": [
