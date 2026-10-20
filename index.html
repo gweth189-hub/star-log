@@ -8,7 +8,9 @@
   <meta name="description" content="Explore NASA astronomy pictures, Hubble telescope observations and deep space discoveries.">
   <title>Star Log — Deep Space Science Hub</title>
   <link rel="manifest" href="./manifest.webmanifest">
-
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#0b1026">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
   <style>
     :root {
       --ink:#040613;
@@ -475,6 +477,13 @@
   });
 
   refreshData();
+</script><script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch(error => console.error("PWA setup failed:", error));
+  });
+}
 </script>
 </body>
 </html>
